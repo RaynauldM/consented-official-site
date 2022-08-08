@@ -1,0 +1,215 @@
+@font-face {
+  font-family: conFont;
+  src: url(tiro-font/TiroGurmukhi-Regular.ttf);
+}
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+.frontpagebandImage {
+  display: none;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 10vh 10vh 25vh 55vh;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-areas:
+    ". h ."
+    ". n ."
+    ". m ."
+    "i i i";
+}
+
+h1,
+h2,
+h3,
+p,
+a {
+  color: white;
+  font-family: conFont;
+  text-align: center;
+  letter-spacing: 0.8px;
+}
+
+header {
+  grid-area: h;
+}
+
+nav {
+  grid-area: n;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.flexContainer > li {
+  margin-right: 2vw;
+  border: white solid 1px;
+  width: 7em;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  grid-area: m;
+}
+
+.frontpageImage {
+  width: 100vw;
+  grid-area: i;
+  margin-top: 5vh;
+}
+
+/* styles for bio */
+
+.bioBand {
+  margin-bottom: 3em;
+}
+
+.bioBand img {
+  width: 100%;
+}
+
+.bioItem {
+  margin-bottom: 4em;
+}
+
+.bioItem img {
+  width: 80vw;
+}
+
+/* styles for media */
+.spotifyPromo p {
+  color: black;
+  font-weight: bold;
+}
+
+.spotifyPromo {
+  background-image: url(/Consented/images/front.png);
+  background-position: 0 120px;
+  border: 2px white inset;
+  border-radius: 25px;
+}
+
+.iframeContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.othervidsContainer {
+  padding: 0;
+}
+
+.othervidsContainer li {
+  margin-bottom: 4em;
+  border: white 1px inset;
+}
+
+figure img {
+  width: 60vw;
+}
+
+/* styles for contact */
+.contactform {
+  border: white 2px solid;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Desktop index*/
+@media screen and (min-width: 800px) {
+  .container {
+    grid-template-areas:
+      ". h ."
+      "n n n"
+      "m m m"
+      "i i i";
+  }
+
+  .frontpageImage {
+    display: none;
+  }
+  .frontpagebandImage {
+    display: block;
+    margin: 9vh auto 0 auto;
+    height: 80vh;
+  }
+
+  /* desktop bio */
+
+  .bioMemberContainer {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .bioBand img {
+    border-radius: 25px;
+  }
+
+  .bioBand {
+    padding-bottom: 4vh;
+    margin: 2vh auto 0 auto;
+    width: 90vw;
+  }
+
+  .bioBand p {
+    font-style: italic;
+  }
+
+  .bioItem {
+    margin: 4em 4em 6em 1em;
+  }
+
+  .bioMemberContainer img {
+    width: 100%;
+  }
+
+  /* desktop media */
+
+  .spotifyPromo {
+    width: 25%;
+    margin: 2.5em auto;
+    background-image: none;
+  }
+
+  .spotifyPromo p {
+    color: white;
+    font-weight: normal;
+  }
+
+  iframe {
+    width: 40vw;
+    height: 40vh;
+    margin-bottom: 2em;
+  }
+
+  .othervidsContainer li {
+    border: none;
+  }
+  .othervidsContainer {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .othervidsContainer img {
+    border: 0.1rem white inset;
+    width: 20vw;
+    height: 20vh;
+  }
+
+  /* desktop contact */
+  .contactform {
+    width: 50vw;
+    margin: 0 auto;
+  }
+}
